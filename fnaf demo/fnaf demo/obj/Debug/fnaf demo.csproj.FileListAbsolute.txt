@@ -1,0 +1,30 @@
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\bin\Debug\fnaf demo.exe.config
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\bin\Debug\fnaf demo.exe
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\bin\Debug\fnaf demo.pdb
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.AssemblyReference.cache
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\MainWindow.g.cs
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\App.g.cs
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo_MarkupCompile.cache
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo_MarkupCompile.lref
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\MainWindow.baml
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.g.resources
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf_demo.Properties.Resources.resources
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.GenerateResource.cache
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.CoreCompileInputs.cache
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.exe
+R:\Desktop\Fnaf-Progettino-main\Fnaf-Progettino-main\fnaf demo\fnaf demo\obj\Debug\fnaf demo.pdb
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\bin\Debug\fnaf demo.exe.config
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\bin\Debug\fnaf demo.exe
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\bin\Debug\fnaf demo.pdb
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.AssemblyReference.cache
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\MainWindow.g.cs
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\App.g.cs
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo_MarkupCompile.cache
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo_MarkupCompile.lref
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\MainWindow.baml
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.g.resources
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf_demo.Properties.Resources.resources
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.GenerateResource.cache
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.csproj.CoreCompileInputs.cache
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.exe
+D:\GitHUB\PRIVATE\Fnaf-Progettino\fnaf demo\fnaf demo\obj\Debug\fnaf demo.pdb

@@ -20,7 +20,7 @@ namespace fnaf_demo
             private readonly int[] percorso = { 2, 2, 2, 5, 5, 5, 12 ,13,14};
             private int indicePercorso;
             public int stanzaAttuale;
-            public int aggressivita = 100;
+            public int aggressivita = 10;
 
             public Fenicottero()
             {

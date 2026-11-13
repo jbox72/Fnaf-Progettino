@@ -1,0 +1,124 @@
+﻿<Window x:Class="fnaf_demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fnaf_demo"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="1000" Width="1600"
+        WindowStartupLocation="CenterScreen"
+        Background="Black">
+
+    <Viewbox Stretch="Uniform">
+
+        <Grid Width="1600" Height="1000">
+
+            <Image Source="immagini/Ufficio.jpg" Stretch="Fill"/>
+            <Image x:Name="imgjumpscare" Stretch="Fill" Margin="-52,-76,-81,-33" Visibility="Collapsed" Panel.ZIndex="999"/>
+            <TextBlock x:Name="Batteria_text"  
+                       Text="100%" 
+                       FontFamily="Consolas" 
+                       FontSize="30" 
+                       Foreground="#FF696555" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       Margin="821,527,0,0"/>
+
+            <TextBlock x:Name="Orario" 
+                       HorizontalAlignment="Left" 
+                       Height="30" 
+                       Margin="968,622,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="00:00" 
+                       VerticalAlignment="Top"
+                       Width="68" RenderTransformOrigin="0.5,0.5" FontSize="20" Foreground="White" FontFamily="Dubai">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="6.827"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+
+            <Button x:Name="Camere_button_aperura" Margin="714,0,690,0" Height="125" VerticalAlignment="Bottom" Click="Camere_click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+
+
+            <Grid x:Name="CameraMenuGrid" Visibility="Collapsed" 
+      HorizontalAlignment="Center" VerticalAlignment="Center" 
+      Width="1580" Height="875" 
+      Panel.ZIndex="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="93*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Camere_button_aperura_Copia" Margin="685,812,686,-93" Click="Camere_click" Grid.RowSpan="2">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Image x:Name="imgCamera" Source="immagini/Palco_3Presenti_123.png" Stretch="Fill" Margin="148,-59,272,118"/>
+                <Button x:Name="PalcoBtn" Height="68" Margin="248,686,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="96" Click="Palco" Panel.ZIndex="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+
+                <Button x:Name="Cucina" Height="68" Margin="344,686,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="89" Click="CucinaKlic" Panel.ZIndex="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+
+                <Image Source="/immagini/Sfondocam.jpg " Margin="-244,-59,40,-73" Grid.RowSpan="2" Panel.ZIndex="-1"/>
+
+                <Image Source="immagini/Camere.png" Margin="-2,635,982,-73" Grid.RowSpan="2"/>
+                <Button x:Name="Ristorazione" Height="68" Margin="157,686,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="91" Click="RistorazioneKlc" Panel.ZIndex="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Salone" Height="53" Margin="173,754,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="243" Click="Saloneclc" Panel.ZIndex="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Servizio6" Height="44" Margin="241,812,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="27" Click="Servizio_sx" Panel.ZIndex="1" Grid.RowSpan="2">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Servizio7" Height="46" Margin="326,812,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="27" Click="Salone_dx" Panel.ZIndex="1" Grid.RowSpan="2">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Pirati" Height="117" Margin="108,727,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="49" Click="PiratiKlc" Panel.ZIndex="1" Grid.RowSpan="2">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="Retropalco" Height="80" Margin="433,727,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="33" Click="RetroKlc" Panel.ZIndex="1">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+            <Button x:Name="Shock" Margin="812,0,753,255" Height="31" VerticalAlignment="Bottom" Click="Shock_clck" BorderBrush="#00000000">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+    </Viewbox>
+</Window>

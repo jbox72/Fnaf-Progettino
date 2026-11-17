@@ -30,6 +30,7 @@ namespace fnaf_demo
 
             if (rnd.Next(100) < aggressivita) // 20% di possibilità se aggressivita = 20\
             {
+               
                 indicePercorso++;
                 stanzaAttuale = percorso[indicePercorso];
             }

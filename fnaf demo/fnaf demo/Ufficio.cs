@@ -10,8 +10,8 @@ namespace fnaf_demo
     {
         private bool luceSX = false;
         private bool luceDX = false;
-        private bool portaSX = false;
-        private bool portaDX = false;
+        public bool portaSX = false;
+        public bool portaDX = false;
         private float batteria;
         private float consumoBatteria;
 
@@ -70,7 +70,7 @@ namespace fnaf_demo
             if (portaSX != true)
             {
                 portaSX = true;
-                consumoBatteria = consumoBatteria + 0.5f;
+                consumoBatteria = consumoBatteria +0.5f;
             }
         }
 

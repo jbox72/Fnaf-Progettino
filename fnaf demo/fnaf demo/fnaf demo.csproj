@@ -168,6 +168,8 @@
     <Resource Include="immagini\sgabuzzino_fenicottero.jpg" />
     <Resource Include="immagini\sgabuzzino_fenicottero_attivo.jpg" />
     <Resource Include="immagini\fenicotterowither_jumpscare.jpg" />
+    <Resource Include="immagini\PortaDX.png" />
+    <Resource Include="immagini\PortaSX.png" />
     <Content Include="suoni\jumpscare.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

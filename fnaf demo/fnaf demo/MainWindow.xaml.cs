@@ -125,5 +125,33 @@ namespace fnaf_demo
             gameEngine.fenicottero_anim.TestShock(true);
             gameEngine.ufficio.shock = false;
         }
+
+        private void Porta_DX_clck(object sender, RoutedEventArgs e)
+        {
+            if (gameEngine.ufficio.portaDX == false)
+            {
+              gameEngine.ufficio.chiudiPortaDX();
+                portaDX_img.Visibility = Visibility.Visible; 
+            }
+            else
+            {
+                gameEngine.ufficio.apriPortaDX();
+           portaDX_img.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void PortaSX_clck(object sender, RoutedEventArgs e)
+        {
+            if (gameEngine.ufficio.portaSX == false)
+            {
+                gameEngine.ufficio.chiudiPortaSX();
+                portaSX_img.Visibility = Visibility.Visible;
+            }
+            else
+            {                portaSX_img.Visibility = Visibility.Collapsed;
+                gameEngine.ufficio.apriPortaSX();
+
+            }
+        }
     }
 }

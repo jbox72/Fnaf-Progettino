@@ -23,10 +23,35 @@ namespace fnaf_demo
         public MainWindow()
         {
             InitializeComponent();
-            
+
             gameEngine.Tick += Tick_gioco;
             gameEngine.imgjumpscare = imgjumpscare;
+            gameEngine.AnimatronicsMoved += GameEngine_AnimatronicsMoved;
 
+        }
+
+        private void GameEngine_AnimatronicsMoved(object sender, int stanzaPrecedente, int stanzaSuccessiva)
+        {
+            if (sender is Procione)
+            {
+                if (stanzaSuccessiva == 9)
+                {
+                    if (gameEngine.ufficio.luceSX == true)
+                    {
+                        LuceSX_img.Visibility = Visibility.Visible;
+                    }
+                }
+            }
+            if (sender is Rana)
+            {
+                if (stanzaSuccessiva == 9)
+                {
+                    if (gameEngine.ufficio.luceDX == true)
+                    {
+                        LuceDX_img.Visibility = Visibility.Visible;
+                    }
+                }
+            }
         }
 
         private void Tick_gioco(object sender, EventArgs e)
@@ -40,7 +65,7 @@ namespace fnaf_demo
             Orario.Text = iOR.ToString() + ":00";
 
 
-          
+
             if (CameraMenuGrid.Visibility == Visibility.Visible)
             {
                 AggiornaVistaCamera();
@@ -68,7 +93,7 @@ namespace fnaf_demo
             else
             {
                 CameraMenuGrid.Visibility = Visibility.Visible;
-                AggiornaVistaCamera(); 
+                AggiornaVistaCamera();
             }
         }
 
@@ -130,13 +155,13 @@ namespace fnaf_demo
         {
             if (gameEngine.ufficio.portaDX == false)
             {
-              gameEngine.ufficio.chiudiPortaDX();
-                portaDX_img.Visibility = Visibility.Visible; 
+                gameEngine.ufficio.chiudiPortaDX();
+                portaDX_img.Visibility = Visibility.Visible;
             }
             else
             {
                 gameEngine.ufficio.apriPortaDX();
-           portaDX_img.Visibility = Visibility.Collapsed;
+                portaDX_img.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -148,9 +173,39 @@ namespace fnaf_demo
                 portaSX_img.Visibility = Visibility.Visible;
             }
             else
-            {                portaSX_img.Visibility = Visibility.Collapsed;
+            {
+                portaSX_img.Visibility = Visibility.Collapsed;
                 gameEngine.ufficio.apriPortaSX();
 
+            }
+        }
+
+        private void LuceDX_Clck(object sender, RoutedEventArgs e)
+        {
+
+                if (gameEngine.ufficio.luceDX == false)
+                {
+                    gameEngine.ufficio.luceDX = true;
+                    LuceDX_img.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    gameEngine.ufficio.luceDX = false;
+                    LuceDX_img.Visibility = Visibility.Collapsed;
+                }
+        }
+        private void LuceSX_Clck(object sender, RoutedEventArgs e)
+        {
+
+            if (gameEngine.ufficio.luceSX == false)
+            {
+                gameEngine.ufficio.luceSX = true;
+                LuceSX_img.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                gameEngine.ufficio.luceSX = false;
+                LuceSX_img.Visibility = Visibility.Collapsed;
             }
         }
     }

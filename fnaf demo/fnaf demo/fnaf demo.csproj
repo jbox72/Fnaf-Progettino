@@ -163,6 +163,7 @@
     <Resource Include="immagini\jumpscare_procione.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="UfficioLuceDX.jpg" />
     <Resource Include="immagini\jumpscare_rana.jpg" />
     <Resource Include="immagini\jumpscare_fenicottero.jpg" />
     <Resource Include="immagini\sgabuzzino_fenicottero.jpg" />
@@ -170,6 +171,9 @@
     <Resource Include="immagini\fenicotterowither_jumpscare.jpg" />
     <Resource Include="immagini\PortaDX.png" />
     <Resource Include="immagini\PortaSX.png" />
+    <Resource Include="immagini\UfficioLuceDX.jpg" />
+    <Resource Include="immagini\UfficioLuceSX.jpg" />
+    <Resource Include="immagini\UfficioLuceDXFake.jpg" />
     <Content Include="suoni\jumpscare.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -23,7 +23,11 @@ namespace fnaf_demo
         public Image imgjumpscare;
         public Image jumpscareShake;
 
-       
+
+        public delegate void AnimatronicsMovedEventHandler(object sender, int stanzaPrecedente, int stanzaSuccessiva);
+        public event AnimatronicsMovedEventHandler AnimatronicsMoved;
+
+
 
         // MediaPlayer dichiarati a livello di classe
         private MediaPlayer jumpsound = new MediaPlayer();
@@ -225,15 +229,40 @@ namespace fnaf_demo
             }
             if (Ogni(10))
             {
+
                 fenicottero_anim.Avanza();
             }
             if (Ogni(7))
             {
-                rana_anim.Avanza();
+                if (rana_anim.stanzaAttuale == 10 && ufficio.portaDX == true)
+                {
+                    rana_anim.ResetAllInizio();
+                }
+                else
+                {
+                    int prec = rana_anim.stanzaAttuale;
+                    rana_anim.Avanza();
+                    if (prec != rana_anim.stanzaAttuale)
+                    {
+                        AnimatronicsMoved?.Invoke(rana_anim, prec, rana_anim.stanzaAttuale);
+                    }
+                }
             }
             if (Ogni(7))
             {
-                procione_anim.Avanza();
+                if (procione_anim.stanzaAttuale == 9 && ufficio.portaSX == true)
+                {
+                    procione_anim.ResetAllInizio();
+                }
+                else
+                {
+                    int prec= procione_anim.stanzaAttuale;
+                    procione_anim.Avanza();
+                    if(prec!=procione_anim.stanzaAttuale)
+                    {
+                        AnimatronicsMoved?.Invoke(procione_anim, prec, procione_anim.stanzaAttuale);
+                    }
+                }
             }
             if (Ogni(3))
             {

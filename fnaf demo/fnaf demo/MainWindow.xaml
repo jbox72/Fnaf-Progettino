@@ -15,11 +15,17 @@
         <Grid Width="1600" Height="1000">
 
             <Image Source="immagini/Ufficio.jpg" Stretch="Fill"/>
-            <Image Source="/immagini/PortaDX.png" x:Name="portaDX_img" Stretch="Fill" Margin="1113,0,0,5" Visibility="Collapsed"/>
-            <Image Source="/immagini/PortaSX.png" x:Name="portaSX_img" Stretch="Fill" Margin="0,11,1053,5" Visibility="Collapsed"/>
+            <Image Source="/immagini/UfficioLuceDX.jpg" x:Name="LuceDX_img" Stretch="Fill" Margin="1107,0,0,0" Visibility="Collapsed"/>
+            <Image Source="/immagini/UfficioLuceSX.jpg" x:Name="LuceSX_img" Stretch="Fill" Margin="-14,-8,1072,0" Visibility="Collapsed"/>
+
+
+            <Image Source="/immagini/PortaDX.png" x:Name="portaDX_img" Stretch="Fill" Margin="1102,-13,21,0" Visibility="Collapsed"/>
+            <Image Source="/immagini/PortaSX.png" x:Name="portaSX_img" Stretch="Fill" Margin="0,6,1053,10" Visibility="Collapsed"/>
+
+
 
             <Image x:Name="imgjumpscare" Stretch="Fill" Margin="-52,-76,-81,-33" Visibility="Collapsed" Panel.ZIndex="10"/>
-            
+
             <TextBlock x:Name="Batteria_text"  
                        Text="100%" 
                        FontFamily="Consolas" 
@@ -148,7 +154,18 @@
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
-            
+            <Button x:Name="LuceDX" Margin="815,0,750,206" Height="31" VerticalAlignment="Bottom" Click="LuceDX_Clck" BorderBrush="#00000000">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="LuceSX" Margin="755,0,810,206" Height="31" VerticalAlignment="Bottom" Click="LuceSX_Clck" BorderBrush="#00000000">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+
+
 
         </Grid>
     </Viewbox>

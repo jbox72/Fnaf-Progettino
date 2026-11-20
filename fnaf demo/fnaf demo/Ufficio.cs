@@ -8,8 +8,8 @@ namespace fnaf_demo
 {
     internal class Ufficio
     {
-        private bool luceSX = false;
-        private bool luceDX = false;
+        public bool luceSX = false;
+        public bool luceDX = false;
         public bool portaSX = false;
         public bool portaDX = false;
         private float batteria;

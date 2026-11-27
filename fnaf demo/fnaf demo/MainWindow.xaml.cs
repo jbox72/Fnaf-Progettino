@@ -12,45 +12,111 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace fnaf_demo
 {
     public partial class MainWindow : Window
     {
-        GameEngine gameEngine = new GameEngine();
-        // Windows1 w = new Windows1();
-        // w.showdialog()
-        public MainWindow()
+        GameEngine gameEngine;
+
+        public MainWindow() : this(20, 15, 10) { }
+
+        public MainWindow(int aggProcione, int aggRana, int aggFenicottero)
         {
             InitializeComponent();
+
+            gameEngine = new GameEngine(aggProcione, aggRana, aggFenicottero);
 
             gameEngine.Tick += Tick_gioco;
             gameEngine.imgjumpscare = imgjumpscare;
             gameEngine.AnimatronicsMoved += GameEngine_AnimatronicsMoved;
+            gameEngine.FineGioco += GameEngine_FineGioco;
+        }
+        private DispatcherTimer flashTimer;
 
+        private void AvviaFlashBlackout()
+        {
+            if (flashTimer != null) return;
+
+            flashTimer = new DispatcherTimer();
+            flashTimer.Interval = TimeSpan.FromMilliseconds(10);
+            int contatore = 0;
+
+            flashTimer.Tick += (s, e) =>
+            {
+                overlayBlack.Visibility = (overlayBlack.Visibility == Visibility.Visible)
+                    ? Visibility.Collapsed
+                    : Visibility.Visible;
+
+                contatore++;
+                if (contatore >= 100)
+                {
+                    flashTimer.Stop();
+                    flashTimer = null;
+                    overlayBlack.Visibility = Visibility.Collapsed;
+                    gameEngine.killProcione();
+
+                }
+            };
+
+            flashTimer.Start();
+        }
+        private void GameEngine_FineGioco(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void GameEngine_AnimatronicsMoved(object sender, int stanzaPrecedente, int stanzaSuccessiva)
         {
             if (sender is Procione)
             {
-                if (stanzaSuccessiva == 9)
-                {
-                    if (gameEngine.ufficio.luceSX == true)
-                    {
-                        LuceSX_img.Visibility = Visibility.Visible;
-                    }
-                }
+                AggiornaLuceSX();
             }
+
             if (sender is Rana)
             {
-                if (stanzaSuccessiva == 9)
-                {
-                    if (gameEngine.ufficio.luceDX == true)
-                    {
-                        LuceDX_img.Visibility = Visibility.Visible;
-                    }
-                }
+                AggiornaLuceDX();
+            }
+        }
+
+        private void AggiornaLuceDX()
+        {
+            if (gameEngine.ufficio.luceDX == false)
+            {
+                LuceDX_img.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+            LuceDX_img.Visibility = Visibility.Visible;
+
+            if (gameEngine.rana_anim.stanzaAttuale == 10)
+            {
+                LuceDX_img.Source = new BitmapImage(new Uri("/immagini/UfficioLuceDX.jpg", UriKind.Relative));
+            }
+            else
+            {
+                LuceDX_img.Source = new BitmapImage(new Uri("/immagini/LuceDX_nessuno.jpg", UriKind.Relative));
+            }
+        }
+
+        private void AggiornaLuceSX()
+        {
+            if (gameEngine.ufficio.luceSX == false)
+            {
+                LuceSX_img.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+            LuceSX_img.Visibility = Visibility.Visible;
+
+            if (gameEngine.procione_anim.stanzaAttuale == 9)
+            {
+                LuceSX_img.Source = new BitmapImage(new Uri("/immagini/UfficioLuceSX.jpg", UriKind.Relative));
+            }
+            else
+            {
+                LuceSX_img.Source = new BitmapImage(new Uri("/immagini/LuceSX_nessuno.jpg", UriKind.Relative));
             }
         }
 
@@ -64,20 +130,17 @@ namespace fnaf_demo
             Batteria_text.Text = iBa.ToString() + "%";
             Orario.Text = iOR.ToString() + ":00";
 
-
-
             if (CameraMenuGrid.Visibility == Visibility.Visible)
             {
                 AggiornaVistaCamera();
             }
-
-            if (iBa <= 0)
+            if (gameEngine.VerificaBatteria())
             {
-                Batteria_text.Text = "0%";
-                MessageBox.Show("Hai perso! La batteria è finita!");
-                Application.Current.Shutdown();
+                AvviaFlashBlackout();
+                gameEngine.BlackoutFine();
             }
         }
+
         private void AggiornaVistaCamera()
         {
             string percorsoImmagine = gameEngine.camere.OttieniImmagine(gameEngine.procione_anim, gameEngine.rana_anim, gameEngine.fenicottero_anim);
@@ -176,37 +239,35 @@ namespace fnaf_demo
             {
                 portaSX_img.Visibility = Visibility.Collapsed;
                 gameEngine.ufficio.apriPortaSX();
-
             }
         }
 
         private void LuceDX_Clck(object sender, RoutedEventArgs e)
         {
-
-                if (gameEngine.ufficio.luceDX == false)
-                {
-                    gameEngine.ufficio.luceDX = true;
-                    LuceDX_img.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    gameEngine.ufficio.luceDX = false;
-                    LuceDX_img.Visibility = Visibility.Collapsed;
-                }
-        }
-        private void LuceSX_Clck(object sender, RoutedEventArgs e)
-        {
-
-            if (gameEngine.ufficio.luceSX == false)
+            if (gameEngine.ufficio.luceDX == false)
             {
-                gameEngine.ufficio.luceSX = true;
-                LuceSX_img.Visibility = Visibility.Visible;
+                gameEngine.ufficio.accendiLeceDX();
             }
             else
             {
-                gameEngine.ufficio.luceSX = false;
-                LuceSX_img.Visibility = Visibility.Collapsed;
+                gameEngine.ufficio.spegniLeceDX();
             }
+
+            AggiornaLuceDX();
+        }
+
+        private void LuceSX_Clck(object sender, RoutedEventArgs e)
+        {
+            if (gameEngine.ufficio.luceSX == false)
+            {
+                gameEngine.ufficio.accendiLeceSX();
+            }
+            else
+            {
+                gameEngine.ufficio.spegniLeceSX();
+            }
+
+            AggiornaLuceSX();
         }
     }
 }

@@ -49,6 +49,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -56,14 +59,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Fenicottero.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Procione.cs" />
     <Compile Include="Camere.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Rana.cs" />
     <Compile Include="Ufficio.cs" />
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,7 +79,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +102,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -174,6 +178,9 @@
     <Resource Include="immagini\UfficioLuceDX.jpg" />
     <Resource Include="immagini\UfficioLuceSX.jpg" />
     <Resource Include="immagini\UfficioLuceDXFake.jpg" />
+    <Resource Include="immagini\LuceSX_nessuno.jpg" />
+    <Resource Include="immagini\LuceDX_nessuno.jpg" />
+    <Resource Include="immagini\overlay_Blackout.jpg" />
     <Content Include="suoni\jumpscare.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

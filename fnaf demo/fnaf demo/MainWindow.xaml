@@ -13,16 +13,13 @@
     <Viewbox Stretch="Uniform">
 
         <Grid Width="1600" Height="1000">
-
+            <Image Source="/immagini/overlay_Blackout.jpg" x:Name="overlayBlack" Stretch="Fill" Visibility="Collapsed" Panel.ZIndex="15"/>
             <Image Source="immagini/Ufficio.jpg" Stretch="Fill"/>
             <Image Source="/immagini/UfficioLuceDX.jpg" x:Name="LuceDX_img" Stretch="Fill" Margin="1107,0,0,0" Visibility="Collapsed"/>
-            <Image Source="/immagini/UfficioLuceSX.jpg" x:Name="LuceSX_img" Stretch="Fill" Margin="-14,-8,1072,0" Visibility="Collapsed"/>
-
+            <Image Source="/immagini/LuceSX_nessuno.jpg" x:Name="LuceSX_img" Stretch="Fill" Margin="-15,-4,1073,-4" Visibility="Collapsed"/>
 
             <Image Source="/immagini/PortaDX.png" x:Name="portaDX_img" Stretch="Fill" Margin="1102,-13,21,0" Visibility="Collapsed"/>
             <Image Source="/immagini/PortaSX.png" x:Name="portaSX_img" Stretch="Fill" Margin="0,6,1053,10" Visibility="Collapsed"/>
-
-
 
             <Image x:Name="imgjumpscare" Stretch="Fill" Margin="-52,-76,-81,-33" Visibility="Collapsed" Panel.ZIndex="10"/>
 
@@ -59,11 +56,10 @@
                 </Button.Background>
             </Button>
 
-
             <Grid x:Name="CameraMenuGrid" Visibility="Collapsed" 
-      HorizontalAlignment="Center" VerticalAlignment="Center" 
-      Width="1580" Height="875" 
-      Panel.ZIndex="10">
+                  HorizontalAlignment="Center" VerticalAlignment="Center" 
+                  Width="1580" Height="875" 
+                  Panel.ZIndex="10">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="93*"/>
@@ -123,11 +119,13 @@
                 </Button>
 
             </Grid>
+
             <Button x:Name="Shock" Margin="812,0,753,255" Height="31" VerticalAlignment="Bottom" Click="Shock_clck" BorderBrush="#00000000">
                 <Button.Background>
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
+
             <Button x:Name="PortaDX_button" Margin="1229,0,-14,-9" Height="248" VerticalAlignment="Bottom" Click="Porta_DX_clck" BorderBrush="#00000000" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
@@ -141,6 +139,7 @@
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
+
             <Button x:Name="PortaSX_button_Copia" Margin="-19,0,1244,1" Height="245" VerticalAlignment="Bottom" Click="PortaSX_clck" BorderBrush="#00000000" RenderTransformOrigin="0.5,0.5">
                 <Button.RenderTransform>
                     <TransformGroup>
@@ -154,18 +153,18 @@
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
+
             <Button x:Name="LuceDX" Margin="815,0,750,206" Height="31" VerticalAlignment="Bottom" Click="LuceDX_Clck" BorderBrush="#00000000">
                 <Button.Background>
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
+
             <Button x:Name="LuceSX" Margin="755,0,810,206" Height="31" VerticalAlignment="Bottom" Click="LuceSX_Clck" BorderBrush="#00000000">
                 <Button.Background>
                     <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                 </Button.Background>
             </Button>
-
-
 
         </Grid>
     </Viewbox>

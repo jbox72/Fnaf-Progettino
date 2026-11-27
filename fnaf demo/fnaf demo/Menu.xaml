@@ -1,0 +1,67 @@
+﻿<Window x:Class="fnaf_demo.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        Title="Menu" Height="1000" Width="1600"
+        WindowStartupLocation="CenterScreen"
+        Background="Black">
+
+    <Viewbox Stretch="Uniform">
+        <Grid Width="1600" Height="1000">
+
+            <TextBlock Text="Five Night At Racoon - MENU"
+                       Foreground="White"
+                       FontSize="54"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,70,0,0"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,180,0,0">
+                <Button Content="Notte 1 (Facile)" Width="240" Height="60" FontSize="22" Margin="10" Click="LivelloFacile_Click"/>
+                <Button Content="Notte 2 (Normale)" Width="240" Height="60" FontSize="22" Margin="10" Click="LivelloNormale_Click"/>
+                <Button Content="Notte 3 (Difficile)" Width="240" Height="60" FontSize="22" Margin="10" Click="LivelloDifficile_Click"/>
+                <Button Content=" (Caos)" Width="240" Height="60" FontSize="22" Margin="10" Click="LivelloCaos_Click"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Margin="0,310,0,0" Width="700">
+
+                <Grid Margin="0,15">
+                    <TextBlock Text="Aggressivita Procione:" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="-" Width="55" Height="50" FontSize="26" Click="ProcioneMeno_Click"/>
+                        <TextBlock x:Name="ProcioneValore_text" Text="5" Foreground="White" FontSize="30" Width="70" TextAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Content="+" Width="55" Height="50" FontSize="26" Click="ProcionePiu_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,15">
+                    <TextBlock Text="Aggressivita Rana:" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="-" Width="55" Height="50" FontSize="26" Click="RanaMeno_Click"/>
+                        <TextBlock x:Name="RanaValore_text" Text="5" Foreground="White" FontSize="30" Width="70" TextAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Content="+" Width="55" Height="50" FontSize="26" Click="RanaPiu_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="0,15">
+                    <TextBlock Text="Aggressivita Fenicottero:" Foreground="White" FontSize="30" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="-" Width="55" Height="50" FontSize="26" Click="FenicotteroMeno_Click"/>
+                        <TextBlock x:Name="FenicotteroValore_text" Text="5" Foreground="White" FontSize="30" Width="70" TextAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Content="+" Width="55" Height="50" FontSize="26" Click="FenicotteroPiu_Click"/>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+
+            <Button Content="AVVIA NOTTE"
+                    Width="340" Height="85"
+                    FontSize="32" FontWeight="Bold"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,130"
+                    Click="Avvia_Click"/>
+
+        </Grid>
+    </Viewbox>
+</Window>

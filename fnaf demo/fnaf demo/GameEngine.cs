@@ -27,22 +27,26 @@ namespace fnaf_demo
         public delegate void AnimatronicsMovedEventHandler(object sender, int stanzaPrecedente, int stanzaSuccessiva);
         public event AnimatronicsMovedEventHandler AnimatronicsMoved;
 
+        public event EventHandler FineGioco;
 
 
         // MediaPlayer dichiarati a livello di classe
         private MediaPlayer jumpsound = new MediaPlayer();
         private MediaPlayer jumpsound2 = new MediaPlayer();
 
-        public GameEngine()
+        public GameEngine(int aggProcione = 20, int aggRana = 15, int aggFenicottero = 10)
         {
-            ufficio = new Ufficio(false, false, false, false, 100, 0.1f,false);
+            ufficio = new Ufficio(false, false, false, false, 100, 0.1f, false);
             camere = new Camere();
             this.fenicottero_anim = new Fenicottero();
             this.procione_anim = new Procione();
             this.rana_anim = new Rana();
 
-            // PRE-CARICHIAMO I SUONI QUI (così sono pronti e azzerano qualsiasi ritardo)
+            this.procione_anim.aggressivita = aggProcione;
+            this.rana_anim.aggressivita = aggRana;
+            this.fenicottero_anim.aggressivita = aggFenicottero;
 
+            // PRE-CARICHIAMO I SUONI QUI (così sono pronti e azzerano qualsiasi ritardo)
             jumpsound.Open(new Uri("suoni/jumpscare.wav", UriKind.Relative));
             jumpsound2.Open(new Uri("suoni/jumpscare2.wav", UriKind.Relative));
 
@@ -51,6 +55,29 @@ namespace fnaf_demo
 
             T.Tick += GestisciTick;
             T.Start();
+        }
+        public void killProcione()
+        {  
+            procione_anim.stanzaAttuale = 11;
+            T.Start();
+
+        }
+        public void BlackoutFine()
+        {
+            T.Stop();
+            DispatcherTimer timerblack = new DispatcherTimer();
+            timerblack.Interval = TimeSpan.FromMilliseconds(30);
+            timerblack.Tick += GestisciTick;
+
+        }
+        public bool VerificaBatteria()
+        {
+            float batteria = ufficio.getBatteria();
+            if(batteria <= 0)
+            {
+                return true;
+            }
+            return false;
         }
         private async void GestisciTick(object sender, EventArgs e)
         {
@@ -91,6 +118,7 @@ namespace fnaf_demo
                         if (frameIndex >= 100)
                         {
                             timer.Stop();
+                            FineGioco.Invoke(this, null);
                             tremore.X = 0;
                             tremore.Y = 0;
                         }
@@ -133,6 +161,7 @@ namespace fnaf_demo
                             if (frameIndex >= 100)
                             {
                                 timer.Stop();
+                                FineGioco.Invoke(this, null);
                                 tremore.X = 0;
                                 tremore.Y = 0;
                             }
@@ -174,6 +203,7 @@ namespace fnaf_demo
                         if (frameIndex >= 100)
                         {
                             timer.Stop();
+                            FineGioco.Invoke(this, null);
                             tremore.X = 0;
                             tremore.Y = 0;
                         }
@@ -216,6 +246,7 @@ namespace fnaf_demo
                         if (frameIndex >= 100)
                         {
                             timer.Stop();
+                            FineGioco.Invoke(this, null);
                             tremore.X = 0;
                             tremore.Y = 0;
                         }

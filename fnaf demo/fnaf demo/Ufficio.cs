@@ -46,7 +46,7 @@ namespace fnaf_demo
         {
             if (batteria > 0)
             {
-                batteria = batteria - consumoBatteria;
+                batteria = batteria - consumoBatteria*50;
                 if (batteria < 0) batteria = 0;
             }
         }
